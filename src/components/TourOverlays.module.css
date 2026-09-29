@@ -1,0 +1,211 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  color: #2a2622;
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+}
+
+.overlay button {
+  pointer-events: auto;
+}
+
+.brand {
+  position: absolute;
+  top: 4.5%;
+  left: 4.5%;
+  margin: 0;
+}
+
+.brandName {
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  color: #1f1c19;
+}
+
+.brandSub {
+  margin: 0.35rem 0 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(42, 38, 34, 0.62);
+}
+
+.copy {
+  position: absolute;
+  top: 4.5%;
+  right: 4.5%;
+  max-width: min(18rem, 42vw);
+  text-align: right;
+}
+
+.stepLabel {
+  margin: 0 0 0.45rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(42, 38, 34, 0.55);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.caption {
+  margin: 0.55rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: rgba(42, 38, 34, 0.72);
+}
+
+.hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+}
+
+.hotspot:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.hotspotRing {
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 252, 246, 0.95);
+  background: rgba(42, 38, 34, 0.35);
+  box-shadow: 0 0 0 6px rgba(42, 38, 34, 0.12);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.hotspotLabel {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f7f2ea;
+  background: rgba(32, 29, 26, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.rail {
+  position: absolute;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: stretch;
+  height: 2.6rem;
+  pointer-events: auto;
+  background: rgba(247, 242, 234, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(42, 38, 34, 0.12);
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  border: 0;
+  border-right: 1px solid rgba(42, 38, 34, 0.1);
+  background: transparent;
+  cursor: pointer;
+  color: rgba(42, 38, 34, 0.55);
+  transition: color 0.25s ease, background 0.25s ease;
+  padding: 0.2rem 0.15rem;
+}
+
+.step:last-child {
+  border-right: 0;
+}
+
+.step:disabled:not(.stepActive) {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.stepActive {
+  color: #1f1c19;
+  background: rgba(255, 252, 246, 0.72);
+  cursor: default;
+}
+
+.stepMark {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+.stepActive .stepMark {
+  opacity: 1;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #5c6b58;
+}
+
+.stepText {
+  font-size: clamp(0.55rem, 1.1vw, 0.68rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 5px rgba(42, 38, 34, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(42, 38, 34, 0.04);
+  }
+}
+
+@media (max-width: 720px) {
+  .copy {
+    top: auto;
+    bottom: 16%;
+    right: 4.5%;
+    left: 4.5%;
+    max-width: none;
+    text-align: left;
+  }
+
+  .caption {
+    display: none;
+  }
+
+  .stepText {
+    letter-spacing: 0.04em;
+  }
+}
