@@ -1,0 +1,28 @@
+:root {
+  --stone: #c9c2b6;
+  --ink: #2a2622;
+  --mist: #f7f2ea;
+  --moss: #5c6b58;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
