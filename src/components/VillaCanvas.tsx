@@ -124,18 +124,18 @@ function SceneContents({
 
   return (
     <>
-      <color attach="background" args={["#c9c2b6"]} />
-      <fog attach="fog" args={["#c9c2b6", 14, 32]} />
-      <ambientLight intensity={0.55} color="#f2ebe0" />
+      <color attach="background" args={["#b7b0a4"]} />
+      <fog attach="fog" args={["#b7b0a4", 18, 40]} />
+      <ambientLight intensity={0.7} color="#f5efe6" />
       <directionalLight
-        position={[6, 10, -4]}
-        intensity={1.15}
-        color="#fff4e6"
+        position={[8, 12, -6]}
+        intensity={1.35}
+        color="#fff6ea"
         castShadow
         shadow-mapSize={[1024, 1024]}
       />
-      <directionalLight position={[-4, 4, 6]} intensity={0.35} color="#d7e0dc" />
-      <hemisphereLight args={["#f0e8dc", "#8a9184", 0.45]} />
+      <directionalLight position={[-5, 5, 7]} intensity={0.45} color="#d5e2de" />
+      <hemisphereLight args={["#efe6d8", "#6f7a68", 0.55]} />
       <GuidedCamera
         stopId={stopId}
         traveling={traveling}
@@ -179,7 +179,7 @@ export function VillaCanvas({
       }}
       onCreated={({ gl, camera }) => {
         try {
-          gl.setClearColor("#c9c2b6");
+          gl.setClearColor("#b7b0a4");
           camera.lookAt(...STOPS[0].lookAt);
         } catch {
           setFailed(true);

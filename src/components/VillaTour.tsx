@@ -54,6 +54,11 @@ export function VillaTour() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("still") === "1" || params.get("nowebgl") === "1") {
+      setWebgl(false);
+      return;
+    }
     setWebgl(detectWebGL());
   }, []);
 
